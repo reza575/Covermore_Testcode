@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="UserBindingTop">
+        <variable
+            name="newsshow"
+            type="com.moeiny.reza.covermore_testcode.data.model.uimodel.ShowNewsModel"/>
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/card_photorow_parent"
+        android:layout_margin="@dimen/recycler_item_margin"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_newsrowtop_pic"
+                app:imageUrl="@{newsshow.link}"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+                <TextView
+                    android:id="@+id/txt_newsrowtop_title"
+                    android:layout_below="@+id/img_newsrowtop_pic"
+                    android:textColor="@color/blue"
+                    android:layout_margin="@dimen/hor_margin"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    tools:text="@{newsshow.title}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/img_newsrowtop_line"
+                android:layout_below="@id/txt_newsrowtop_title"
+                android:background="@color/grayline"
+                android:layout_marginLeft="@dimen/hor_margin"
+                android:layout_marginRight="@dimen/hor_margin"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                    android:id="@+id/txt_newsrowtop_date"
+                    android:layout_below="@id/img_newsrowtop_line"
+                    android:textColor="@color/gray"
+                    android:layout_margin="@dimen/view_margin"
+                    android:textSize="14sp"
+                    android:ellipsize="end"
+                    tools:text="@{newsshow.pubDate}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
+</layout>
